@@ -24,7 +24,7 @@ if (flutterVersionName == null) {
 }
 
 android {
-    namespace = "com.example.sikker_cykel"
+    namespace = "com.cykel_sikkerhed.sikker_cykel"
     compileSdk = flutter.compileSdkVersion
     ndkVersion = flutter.ndkVersion
 
