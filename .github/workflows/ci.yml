@@ -37,15 +37,14 @@ jobs:
       - name: Build for Android
         run: flutter build apk --no-shrink
 
-      - name: Deploy to Firebase App Distribution
-        if: github.event_name == 'pull_request'
-        uses: wzieba/Firebase-Distribution-Github-Action@v1
-        with:
-          appId: ${{ secrets.FIREBASE_APP_ID }}
-          token: ${{ secrets.FIREBASE_TOKEN }}
-          groups: testers
-          file: build/app/outputs/flutter-apk/app-release.apk
-          releaseNotesFile: release-notes.txt
+#     - name: Deploy to Firebase App Distribution
+#      if: github.event_name == 'pull_request'
+#       uses: wzieba/Firebase-Distribution-Github-Action@v1
+#        with:
+#          appId: ${{ secrets.FIREBASE_APP_ID }}
+#          token: ${{ secrets.FIREBASE_TOKEN }}
+#          groups: testers
+#          file: build/app/outputs/flutter-apk/app-release.apk
 
   require-approval:
     if: github.event.pull_request.base.ref == 'main'
