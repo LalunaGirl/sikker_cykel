@@ -10,6 +10,11 @@
 .svn/
 migrate_working_dir/
 
+# Secret or sensitive files
+*.env
+api_key.dart
+*env.g.dart
+
 # IntelliJ related
 *.iml
 *.ipr
