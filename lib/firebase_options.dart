@@ -3,6 +3,7 @@
 import 'package:firebase_core/firebase_core.dart' show FirebaseOptions;
 import 'package:flutter/foundation.dart'
     show defaultTargetPlatform, kIsWeb, TargetPlatform;
+import 'package:sikker_cykel/env/env.dart' show Env;
 
 /// Default [FirebaseOptions] for use with your Firebase apps.
 ///
@@ -17,13 +18,13 @@ import 'package:flutter/foundation.dart'
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
-      return web;
+      return webOptions();
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
-        return android;
+        return androidOptions();
       case TargetPlatform.iOS:
-        return ios;
+        return iosOptions();
       case TargetPlatform.macOS:
         return macos;
       case TargetPlatform.windows:
@@ -40,31 +41,37 @@ class DefaultFirebaseOptions {
     }
   }
 
-  static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyBSZ02sc8WsIDi98A8ARp0MQsyhNsvc61Q',
-    appId: '1:455198085978:web:5ac477e8e7734429739963',
-    messagingSenderId: '455198085978',
-    projectId: 'sikker-cykel',
-    authDomain: 'sikker-cykel.firebaseapp.com',
-    storageBucket: 'sikker-cykel.appspot.com',
-  );
+  static FirebaseOptions webOptions() {
+    return FirebaseOptions(
+      apiKey: 'Env.webApiKey',
+      appId: '1:455198085978:web:5ac477e8e7734429739963',
+      messagingSenderId: '455198085978',
+      projectId: 'sikker-cykel',
+      authDomain: 'sikker-cykel.firebaseapp.com',
+      storageBucket: 'sikker-cykel.appspot.com',
+    );
+  }
 
-  static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyBRdrUmMJlVWTK3dETdPKbLk9jwhwdrjXE',
-    appId: '1:455198085978:android:c6e356ae39da6f37739963',
-    messagingSenderId: '455198085978',
-    projectId: 'sikker-cykel',
-    storageBucket: 'sikker-cykel.appspot.com',
-  );
+  static FirebaseOptions androidOptions() {
+    return FirebaseOptions(
+      apiKey: Env.androidApiKey,
+      appId: '1:455198085978:android:c6e356ae39da6f37739963',
+      messagingSenderId: '455198085978',
+      projectId: 'sikker-cykel',
+      storageBucket: 'sikker-cykel.appspot.com',
+    );
+  }
 
-  static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyBODf2a9OiiYHKqhAc28v9yclcIxhFXSDk',
-    appId: '1:455198085978:ios:e17507d434f3b574739963',
-    messagingSenderId: '455198085978',
-    projectId: 'sikker-cykel',
-    storageBucket: 'sikker-cykel.appspot.com',
-    iosBundleId: 'com.example.sikkerCykel',
-  );
+  static FirebaseOptions iosOptions() {
+    return FirebaseOptions(
+      apiKey: 'AIzaSyBODf2a9OiiYHKqhAc28v9yclcIxhFXSDk',
+      appId: '1:455198085978:ios:e17507d434f3b574739963',
+      messagingSenderId: '455198085978',
+      projectId: 'sikker-cykel',
+      storageBucket: 'sikker-cykel.appspot.com',
+      iosBundleId: 'com.example.sikkerCykel',
+    );
+  }
 
   static const FirebaseOptions macos = FirebaseOptions(
     apiKey: 'AIzaSyBODf2a9OiiYHKqhAc28v9yclcIxhFXSDk',

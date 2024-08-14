@@ -3,7 +3,6 @@ import 'package:envied/envied.dart';
 
 part 'env.g.dart';
 
-// TODO: Add environment variables here
 @Envied(path: '.env')
 abstract class Env {
   @EnviedField(varName: 'TESTKEY', obfuscate: true)
