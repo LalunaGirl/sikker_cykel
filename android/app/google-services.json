@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "455198085978",
+    "project_id": "sikker-cykel",
+    "storage_bucket": "sikker-cykel.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:455198085978:android:c6e356ae39da6f37739963",
+        "android_client_info": {
+          "package_name": "com.cykel_sikkerhed.sikker_cykel"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBRdrUmMJlVWTK3dETdPKbLk9jwhwdrjXE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
